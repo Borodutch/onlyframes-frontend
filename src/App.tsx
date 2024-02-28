@@ -1,6 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import FileUpload from 'components/FileUpload'
 import SignMessage from 'components/SignMessage'
+import TokenSelector from 'components/TokenSelector'
 
 export default function () {
   return (
@@ -21,6 +22,7 @@ export default function () {
         <ConnectButton />
       </div>
       <SignMessage />
+      <TokenSelector />
       <FileUpload />
       <p>
         Made with love by{' '}

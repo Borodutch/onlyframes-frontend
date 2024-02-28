@@ -1,6 +1,6 @@
-import { atom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
 
-export default atom({
+export default atomWithStorage('signature', {
   signature: '',
   message: '',
   address: '',
