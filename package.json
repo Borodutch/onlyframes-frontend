@@ -11,8 +11,13 @@
     "preview": "yarn build && yarn vite preview"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.0.1",
+    "@tanstack/react-query": "^5.24.1",
+    "envalid": "^8.0.0",
     "jotai": "^2.6.5",
-    "preact": "^10.19.6"
+    "preact": "^10.19.6",
+    "viem": "2.x",
+    "wagmi": "^2.5.7"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",

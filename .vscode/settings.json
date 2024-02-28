@@ -17,5 +17,14 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "cSpell.words": ["Onlyframes"]
+  "cSpell.words": [
+    "daisyui",
+    "Onlyframes",
+    "rainbowkit",
+    "synthwave",
+    "tailwindcss",
+    "tanstack",
+    "viem",
+    "wagmi"
+  ]
 }
