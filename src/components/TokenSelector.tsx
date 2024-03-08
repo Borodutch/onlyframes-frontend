@@ -33,6 +33,7 @@ export default function () {
             <option>polygon</option>
             <option>zora</option>
             <option>gnosis</option>
+            <option>poap</option>
           </select>
         </div>
         <div className="flex flex-col">
@@ -62,7 +63,7 @@ export default function () {
           />
           <div class="label">
             <span class="label-text-alt">
-              (leave empty for ERC20 and ERC721)
+              (leave empty for ERC20, ERC721 and POAP)
             </span>
           </div>
         </div>
