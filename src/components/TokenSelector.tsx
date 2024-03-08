@@ -1,5 +1,6 @@
 import { useAccount } from 'wagmi'
 import { useAtom, useAtomValue } from 'jotai'
+import { zeroAddress } from 'viem'
 import signatureAtom from 'atoms/signature'
 import tokenAtom from 'atoms/token'
 
@@ -25,7 +26,14 @@ export default function () {
             class="select select-bordered w-full"
             value={token.network}
             onChange={(e) =>
-              setToken({ ...token, network: e.currentTarget.value })
+              setToken({
+                ...token,
+                address:
+                  e.currentTarget.value === 'poap'
+                    ? zeroAddress
+                    : token.address,
+                network: e.currentTarget.value,
+              })
             }
           >
             <option selected>mainnet</option>
@@ -36,23 +44,27 @@ export default function () {
             <option>poap</option>
           </select>
         </div>
-        <div className="flex flex-col">
-          <div class="label">
-            <span class="label-text">Contract address</span>
+        {token.network !== 'poap' && (
+          <div className="flex flex-col">
+            <div class="label">
+              <span class="label-text">Contract address</span>
+            </div>
+            <input
+              type="text"
+              placeholder="0x..."
+              class="input input-bordered w-full"
+              value={token.address}
+              onChange={(e) =>
+                setToken({ ...token, address: e.currentTarget.value })
+              }
+            />
           </div>
-          <input
-            type="text"
-            placeholder="0x..."
-            class="input input-bordered w-full"
-            value={token.address}
-            onChange={(e) =>
-              setToken({ ...token, address: e.currentTarget.value })
-            }
-          />
-        </div>
+        )}
         <div className="flex flex-col">
           <div class="label">
-            <span class="label-text">Token ID</span>
+            <span class="label-text">
+              {token.network === 'poap' ? 'Event' : 'Token'} ID
+            </span>
           </div>
           <input
             type="text"
@@ -61,11 +73,13 @@ export default function () {
             placeholder="(empty)"
             onChange={(e) => setToken({ ...token, id: e.currentTarget.value })}
           />
-          <div class="label">
-            <span class="label-text-alt">
-              (leave empty for ERC20, ERC721 and POAP)
-            </span>
-          </div>
+          {token.network !== 'poap' && (
+            <div class="label">
+              <span class="label-text-alt">
+                (leave empty for ERC20 and ERC721)
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </>

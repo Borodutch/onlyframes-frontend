@@ -82,7 +82,13 @@ export default function FileUpload() {
         <button
           class="btn btn-active btn-primary"
           onClick={uploadFile}
-          disabled={loading || !file || !network || !tokenAddress}
+          disabled={
+            loading ||
+            !file ||
+            !network ||
+            !tokenAddress ||
+            (network === 'poap' && !id)
+          }
         >
           {loading && '🤔 '}Upload!
         </button>
