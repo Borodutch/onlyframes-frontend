@@ -30,6 +30,7 @@ export default function () {
           >
             <option selected>mainnet</option>
             <option>base</option>
+            <option>polygon</option>
             <option>zora</option>
             <option>gnosis</option>
           </select>
