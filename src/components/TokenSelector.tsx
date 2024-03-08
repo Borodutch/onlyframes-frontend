@@ -31,6 +31,7 @@ export default function () {
             <option selected>mainnet</option>
             <option>base</option>
             <option>zora</option>
+            <option>gnosis</option>
           </select>
         </div>
         <div className="flex flex-col">
